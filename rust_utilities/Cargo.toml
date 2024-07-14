@@ -7,15 +7,16 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
-wasm_guardian = {path = "../wasm_guardian"}
+wasm_guardian = { path = "../wasm_guardian" }
 flate2 = "1.0.25"
-xxhash-rust = {version = "0.8.5", features = ["xxh3"]}
+xxhash-rust = { version = "0.8.5", features = ["xxh3"] }
 once_cell = "1.17.0"
+proc-macro2 = "1.0.86"
 
 [profile.release]
- # Consider these options for a smaller binary size
- strip = true
- panic = "abort"
- opt-level = "z"  # Optimize for size.
- lto = true
- codegen-units = 1
+# Consider these options for a smaller binary size
+strip = true
+panic = "abort"
+opt-level = "z"   # Optimize for size.
+lto = true
+codegen-units = 1
